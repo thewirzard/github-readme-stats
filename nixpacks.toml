@@ -16,7 +16,7 @@ cmds = [
 cmds = ["npm ci --include=dev"]
 
 [phases.build]
-cmds = ["npm test -- --runInBand --coverage=false"]
+cmds = ["env -u WHITELIST -u GIST_WHITELIST -u EXCLUDE_REPO -u PAT_1 NODE_ENV=test npm test -- --runInBand --coverage=false"]
 
 [start]
 cmd = "node express.js"
